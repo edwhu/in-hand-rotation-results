@@ -1,0 +1,6 @@
+Importing module 'gym_38' (/vast/projects/dineshj/lab/hued/env_robosyn/lib/python3.8/site-packages/isaacgym/_bindings/linux-x86_64/gym_38.so)
+Setting GYM_USD_PLUG_INFO_PATH to /vast/projects/dineshj/lab/hued/env_robosyn/lib/python3.8/site-packages/isaacgym/_bindings/linux-x86_64/usd/plugInfo.json
+PyTorch version 2.4.1
+Device count 1
+/vast/projects/dineshj/lab/hued/env_robosyn/lib/python3.8/site-packages/isaacgym/_bindings/src/gymtorch
+[Sat Jun 13 12:49:34 AM EDT 2026] Done.

@@ -1,0 +1,39 @@
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+./isaacgymenvs/train.py:52: UserWarning: 
+The version_base parameter is not specified.
+Please specify a compatability version level, or None.
+Will assume defaults for version 1.1
+  @hydra.main(config_name="config", config_path="./cfg")
+/vast/projects/dineshj/lab/hued/env_robosyn/lib/python3.8/site-packages/hydra/_internal/defaults_list.py:251: UserWarning: In 'config': Defaults list is missing `_self_`. See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/default_composition_order for more information
+  warnings.warn(msg, UserWarning)
+/vast/projects/dineshj/lab/hued/env_robosyn/lib/python3.8/site-packages/hydra/_internal/defaults_list.py:415: UserWarning: In config: Invalid overriding of hydra/job_logging:
+Default list overrides requires 'override' keyword.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/defaults_list_override for more information.
+
+  deprecation_warning(msg)
+/vast/projects/dineshj/lab/hued/env_robosyn/lib/python3.8/site-packages/hydra/_internal/hydra.py:119: UserWarning: Future Hydra versions will no longer change working directory at job runtime by default.
+See https://hydra.cc/docs/1.2/upgrades/1.1_to_1.2/changes_to_job_working_dir/ for more information.
+  ret = run_job(
+Using /vast/home/h/hued/.cache/torch_extensions/py38_cu121 as PyTorch extensions root...
+Emitting ninja build file /vast/home/h/hued/.cache/torch_extensions/py38_cu121/gymtorch/build.ninja...
+Building extension module gymtorch...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+Loading extension module gymtorch...
+Error executing job with overrides: ['headless=True', 'task.env.objSet=cross', 'task=AllegroArmMOAR', 'task.env.axis=z', 'task.env.numEnvs=8192', 'train.params.config.minibatch_size=16384', 'train.params.config.central_value_config.minibatch_size=16384', 'task.env.observationType=full_stack', 'task.env.legacy_obs=True', 'task.env.ablation_mode=no-pc', 'experiment=wheel-wrench', 'train.params.config.user_prefix=wheel-wrench', 'wandb_activate=True', 'wandb_entity=edhu']
+Traceback (most recent call last):
+  File "./isaacgymenvs/train.py", line 54, in launch_rlg_hydra
+    from isaacgymenvs.utils.rlgames_utils import RLGPUEnv, RLGPUAlgoObserver, get_rlgames_env_creator
+  File "/vast/projects/dineshj/lab/hued/in-hand-rotation/isaacgymenvs/utils/rlgames_utils.py", line 37, in <module>
+    from isaacgymenvs.tasks import isaacgym_task_map
+  File "/vast/projects/dineshj/lab/hued/in-hand-rotation/isaacgymenvs/tasks/__init__.py", line 30, in <module>
+    from .allegro_arm_morb_axis import AllegroArmMOAR
+  File "/vast/projects/dineshj/lab/hued/in-hand-rotation/isaacgymenvs/tasks/allegro_arm_morb_axis.py", line 38, in <module>
+    from isaacgymenvs.tasks.base.vec_task import VecTask
+  File "/vast/projects/dineshj/lab/hued/in-hand-rotation/isaacgymenvs/tasks/base/vec_task.py", line 52, in <module>
+    import pytorch3d
+ModuleNotFoundError: No module named 'pytorch3d'
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.

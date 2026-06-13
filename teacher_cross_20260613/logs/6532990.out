@@ -1,0 +1,8 @@
+Importing module 'gym_38' (/vast/projects/dineshj/lab/hued/in-hand-rotation/isaacgym/python/isaacgym/_bindings/linux-x86_64/gym_38.so)
+Setting GYM_USD_PLUG_INFO_PATH to /vast/projects/dineshj/lab/hued/in-hand-rotation/isaacgym/python/isaacgym/_bindings/linux-x86_64/usd/plugInfo.json
+PyTorch version 2.4.1
+Device count 1
+/vast/projects/dineshj/lab/hued/in-hand-rotation/isaacgym/python/isaacgym/_bindings/src/gymtorch
+[1/2] c++ -MMD -MF gymtorch.o.d -DTORCH_EXTENSION_NAME=gymtorch -DTORCH_API_INCLUDE_EXTENSION_H -DPYBIND11_COMPILER_TYPE=\"_gcc\" -DPYBIND11_STDLIB=\"_libstdcpp\" -DPYBIND11_BUILD_ABI=\"_cxxabi1011\" -isystem /vast/projects/dineshj/lab/hued/env_robosyn/lib/python3.8/site-packages/torch/include -isystem /vast/projects/dineshj/lab/hued/env_robosyn/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -isystem /vast/projects/dineshj/lab/hued/env_robosyn/lib/python3.8/site-packages/torch/include/TH -isystem /vast/projects/dineshj/lab/hued/env_robosyn/lib/python3.8/site-packages/torch/include/THC -isystem /vast/projects/dineshj/lab/hued/env_robosyn/include/python3.8 -D_GLIBCXX_USE_CXX11_ABI=0 -fPIC -std=c++17 -DTORCH_MAJOR=2 -DTORCH_MINOR=4 -c /vast/projects/dineshj/lab/hued/in-hand-rotation/isaacgym/python/isaacgym/_bindings/src/gymtorch/gymtorch.cpp -o gymtorch.o 
+[2/2] c++ gymtorch.o -shared -L/vast/projects/dineshj/lab/hued/env_robosyn/lib/python3.8/site-packages/torch/lib -lc10 -ltorch_cpu -ltorch -ltorch_python -o gymtorch.so
+[Sat Jun 13 12:52:27 AM EDT 2026] Done.

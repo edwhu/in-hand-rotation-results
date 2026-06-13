@@ -1,0 +1,83 @@
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+./isaacgymenvs/train.py:52: UserWarning: 
+The version_base parameter is not specified.
+Please specify a compatability version level, or None.
+Will assume defaults for version 1.1
+  @hydra.main(config_name="config", config_path="./cfg")
+/vast/projects/dineshj/lab/hued/env_robosyn/lib/python3.8/site-packages/hydra/_internal/defaults_list.py:251: UserWarning: In 'config': Defaults list is missing `_self_`. See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/default_composition_order for more information
+  warnings.warn(msg, UserWarning)
+/vast/projects/dineshj/lab/hued/env_robosyn/lib/python3.8/site-packages/hydra/_internal/defaults_list.py:415: UserWarning: In config: Invalid overriding of hydra/job_logging:
+Default list overrides requires 'override' keyword.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/defaults_list_override for more information.
+
+  deprecation_warning(msg)
+/vast/projects/dineshj/lab/hued/env_robosyn/lib/python3.8/site-packages/hydra/_internal/hydra.py:119: UserWarning: Future Hydra versions will no longer change working directory at job runtime by default.
+See https://hydra.cc/docs/1.2/upgrades/1.1_to_1.2/changes_to_job_working_dir/ for more information.
+  ret = run_job(
+Using /vast/home/h/hued/.cache/torch_extensions/py38_cu121 as PyTorch extensions root...
+Emitting ninja build file /vast/home/h/hued/.cache/torch_extensions/py38_cu121/gymtorch/build.ninja...
+Building extension module gymtorch...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+Loading extension module gymtorch...
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from WANDB_API_KEY.
+wandb: Currently logged in as: edhu to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.24.2
+wandb: Run data is saved locally in /vast/projects/dineshj/lab/hued/in-hand-rotation/wandb/run-20260613_011734-kbpvwae8
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run wheel-wrench_2026-06-13_01-17-28
+wandb: ⭐️ View project at https://wandb.ai/edhu/isaacgymenvs
+wandb: 🚀 View run at https://wandb.ai/edhu/isaacgymenvs/runs/kbpvwae8
+/vast/projects/dineshj/lab/hued/env_robosyn/lib/python3.8/site-packages/gym/spaces/box.py:127: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(f"Box bound precision lowered by casting to {self.dtype}")
+/vast/projects/dineshj/lab/hued/env_robosyn/lib/python3.8/site-packages/torch/cuda/__init__.py:230: UserWarning: 
+NVIDIA B200 with CUDA capability sm_100 is not compatible with the current PyTorch installation.
+The current PyTorch install supports CUDA capabilities sm_50 sm_60 sm_61 sm_70 sm_75 sm_80 sm_86 sm_90.
+If you want to use the NVIDIA B200 GPU with PyTorch, please check the instructions at https://pytorch.org/get-started/locally/
+
+  warnings.warn(
+Error executing job with overrides: ['headless=True', 'task.env.objSet=cross', 'task=AllegroArmMOAR', 'task.env.axis=z', 'task.env.numEnvs=8192', 'train.params.config.minibatch_size=16384', 'train.params.config.central_value_config.minibatch_size=16384', 'task.env.observationType=full_stack', 'task.env.legacy_obs=True', 'task.env.ablation_mode=no-pc', 'experiment=wheel-wrench', 'train.params.config.user_prefix=wheel-wrench', 'wandb_activate=True', 'wandb_entity=edhu']
+Traceback (most recent call last):
+  File "./isaacgymenvs/train.py", line 174, in launch_rlg_hydra
+    runner.run({
+  File "/vast/projects/dineshj/lab/hued/in-hand-rotation/rl_games/torch_runner.py", line 152, in run
+    self.run_train(args)
+  File "/vast/projects/dineshj/lab/hued/in-hand-rotation/rl_games/torch_runner.py", line 101, in run_train
+    agent = self.algo_factory.create(self.algo_name, base_name='run', params=self.params)
+  File "/vast/projects/dineshj/lab/hued/in-hand-rotation/rl_games/common/object_factory.py", line 15, in create
+    return builder(**kwargs)
+  File "/vast/projects/dineshj/lab/hued/in-hand-rotation/rl_games/torch_runner.py", line 39, in <lambda>
+    self.algo_factory.register_builder('a2c_continuous', lambda **kwargs : a2c_continuous.A2CAgent(**kwargs))
+  File "/vast/projects/dineshj/lab/hued/in-hand-rotation/rl_games/algos_torch/a2c_continuous.py", line 16, in __init__
+    a2c_common.ContinuousA2CBase.__init__(self, base_name, params)
+  File "/vast/projects/dineshj/lab/hued/in-hand-rotation/rl_games/common/a2c_common.py", line 1062, in __init__
+    A2CBase.__init__(self, base_name, params)
+  File "/vast/projects/dineshj/lab/hued/in-hand-rotation/rl_games/common/a2c_common.py", line 108, in __init__
+    self.vec_env = vecenv.create_vec_env(self.env_name, self.num_actors, **self.env_config)
+  File "/vast/projects/dineshj/lab/hued/in-hand-rotation/rl_games/common/vecenv.py", line 219, in create_vec_env
+    return vecenv_config[vec_env_name](config_name, num_actors, **kwargs)
+  File "./isaacgymenvs/train.py", line 128, in <lambda>
+    lambda config_name, num_actors, **kwargs: RLGPUEnv(config_name, num_actors, **kwargs))
+  File "/vast/projects/dineshj/lab/hued/in-hand-rotation/isaacgymenvs/utils/rlgames_utils.py", line 153, in __init__
+    self.env = env_configurations.configurations[config_name]['env_creator'](**kwargs)
+  File "./isaacgymenvs/train.py", line 100, in create_env_thunk
+    envs = isaacgymenvs.make(
+  File "/vast/projects/dineshj/lab/hued/in-hand-rotation/isaacgymenvs/__init__.py", line 88, in make
+    return create_rlgpu_env()
+  File "/vast/projects/dineshj/lab/hued/in-hand-rotation/isaacgymenvs/utils/rlgames_utils.py", line 78, in create_rlgpu_env
+    env = isaacgym_task_map[task_name](
+  File "/vast/projects/dineshj/lab/hued/in-hand-rotation/isaacgymenvs/tasks/allegro_arm_morb_axis.py", line 337, in __init__
+    super().__init__(config=self.cfg, rl_device=rl_device, sim_device=sim_device, graphics_device_id=graphics_device_id, headless=headless, virtual_screen_capture=virtual_screen_capture, force_render=force_render)
+  File "/vast/projects/dineshj/lab/hued/in-hand-rotation/isaacgymenvs/tasks/base/vec_task.py", line 251, in __init__
+    self.allocate_buffers()
+  File "/vast/projects/dineshj/lab/hued/in-hand-rotation/isaacgymenvs/tasks/base/vec_task.py", line 369, in allocate_buffers
+    self.obs_buf = torch.zeros(
+RuntimeError: CUDA error: no kernel image is available for execution on the device
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
