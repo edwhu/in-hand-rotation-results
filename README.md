@@ -84,6 +84,10 @@ Gap expected to grow as training continues.
 | Cross (iter ~13900) | 0.477 | 0.386 | −19% |
 | Baoding (iter ~675) | 0.386 | 0.324 | −16% |
 
+## Reference
+
+- [Observation spaces](obs_spaces.md) — per-frame layout, teacher vs. student dims, ablation filtering
+
 ## Key Reference Numbers (from paper)
 
 | Condition | CRR (sim) | TTF (sim) |
