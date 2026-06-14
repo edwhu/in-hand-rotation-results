@@ -37,12 +37,12 @@ Parallelize with multiple `distill.worker_id` values across GPUs.
 
 Train student variants from the collected dataset. All use the same data; only `ablation_mode` differs.
 
-| Student | `ablation_mode` | Input |
-|---|---|---|
-| No-touch | `no-tactile` | Proprioception + Camera PC + Augmented PC |
-| Touch (binary only) | `no-pc` | Proprioception + Binary contact (FSR tactile) |
-| Touch + Synesthesia | `multi-modality-plus` | Proprioception + Binary contact + Camera PC + Augmented PC + Tactile PC |
-| Prop-only | `prop-only` | Proprioception + task goal only (no touch, no camera) |
+| Student | `ablation_mode` | Input | Status |
+|---|---|---|---|
+| Prop-only | `prop-only` | Joint pos/vel + spin axis goal (276 dims) | ✅ Trained (cross + baoding) |
+| Touch only | `no-pc` | Prop + 16-dim FSR tactile (340 dims) | ✅ Trained (cross + baoding) |
+| Camera only | `no-tactile` | Prop + Camera PC + Augmented PC (276 dims) | Not yet trained |
+| Touch + Synesthesia | `multi-modality-plus` | Prop + Touch + Camera PC + Augmented PC + Tactile PC | Not yet trained |
 
 ---
 
