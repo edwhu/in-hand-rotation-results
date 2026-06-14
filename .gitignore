@@ -1,0 +1,3 @@
+# SLURM stdout/stderr — too large and transient for version control
+**/logs/*.out
+**/logs/*.err

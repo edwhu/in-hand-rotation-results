@@ -48,7 +48,39 @@ See `plan_touch_distillation.md` in the `in-hand-rotation` repo for the exact co
 
 | Folder | Date | Status | Purpose |
 |---|---|---|---|
-| *(none yet)* | | | |
+| `teacher_cross_20260613` | 2026-06-13 | Done | Cross (wheel-wrench) teacher S1 — `wheel-wrench-teacher-s1` |
+| `teacher_cross_20260613_s2` | 2026-06-13 | Done | Cross teacher S2 attempt (unused) |
+| `teacher_baoding_20260613` | 2026-06-13 | Done | Baoding teacher S1 — `baoding-teacher-s1` |
+| `teacher_baoding_20260613_s2` | 2026-06-13 | Done | Baoding teacher S2 attempt (unused) |
+| `bc_cross_20260614` | 2026-06-14 | **Done** | BC students (prop-only, no-pc) on cross task — [analysis](bc_cross_20260614/analysis.md) |
+| `bc_baoding_20260614` | 2026-06-14 | **Running** | BC students (prop-only, no-pc) on baoding task — [analysis](bc_baoding_20260614/analysis.md) |
+
+## Results (2026-06-14)
+
+### Cross task — converged at iter ~13900 (training cancelled, no improvement after ~11800)
+
+| Student | Mean Ep Reward | Mean Ep Length | vs prop-only |
+|---------|---------------|----------------|--------------|
+| prop-only | 143.79 | 148.8 / 500 | — |
+| no-pc / touch | 304.22 | 227.0 / 500 | **+2.1×** |
+
+Both eventually drop the object. Touch adds ~80 more steps before failure. Neither survives to 500 steps.
+
+### Baoding task — early eval at iter 3250 (16% trained, final eval pending)
+
+| Student | Mean Ep Reward | Mean Ep Length | vs prop-only |
+|---------|---------------|----------------|--------------|
+| prop-only | 268.04 | 116.5 / 500 | — |
+| no-pc / touch | 301.59 | 127.6 / 500 | **+1.13×** |
+
+Gap expected to grow as training continues.
+
+### BC Loss (touch consistently lower across both tasks)
+
+| Task | prop-only | no-pc (touch) | Δ |
+|------|-----------|---------------|---|
+| Cross (iter ~13900) | 0.477 | 0.386 | −19% |
+| Baoding (iter ~675) | 0.386 | 0.324 | −16% |
 
 ## Key Reference Numbers (from paper)
 
