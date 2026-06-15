@@ -41,9 +41,6 @@ Train student variants from the collected dataset. All use the same data; only `
 |---|---|---|---|
 | Prop-only | `prop-only` | Joint pos/vel + spin axis goal (276 dims) | ✅ Trained (cross + baoding) |
 | Touch only | `no-pc` | Prop + 16-dim FSR tactile (340 dims) | ✅ Trained (cross + baoding) |
-| Camera only | `no-tactile` | Prop + Camera PC + Augmented PC (276 dims) | Not yet trained |
-| Touch + Synesthesia | `multi-modality-plus` | Prop + Touch + Camera PC + Augmented PC + Tactile PC | Not yet trained |
-
 ---
 
 ## Folder Index
